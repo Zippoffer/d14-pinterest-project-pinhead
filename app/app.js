@@ -6,6 +6,7 @@ var app = angular.module("PinheadApp", ['ngRoute'])
 
 
 app.config(function($routeProvider, FireCreds) {
+<<<<<<< HEAD
         let authConfig = {
             apiKey: FireCreds.apiKey,
             authDomain: FireCreds.authDomain
@@ -17,3 +18,27 @@ app.config(function($routeProvider, FireCreds) {
             templateUrl: 'partials/login.html',
             controller: 'LogInCtrl'
         }).
+=======
+    let authConfig = {
+        apiKey: FireCreds.apiKey,
+        authDomain: FireCreds.authDomain
+    };
+    firebase.initializeApp(authConfig);
+
+    $routeProvider.
+    when('/', {
+        templateUrl: 'partials/login.html',
+        controller: 'LogInCtrl'
+    });
+    // }).
+    // when('/pinhead/mainboard', {
+    //     templateUrl: 'partials/mainboard.html',
+    //     controller: 'BoardViewCtrl'
+    // }).
+    // when('/pinhead/board/:itemID', {
+    //     templateUrl: 'partials/board.html',
+    //     controller: 'SelectViewCtrl'
+    // }).
+    // otherwise("/pinhead/mainboard");
+});
+>>>>>>> 323b21b4373b39ad1e491755ac865931909e2a8e
