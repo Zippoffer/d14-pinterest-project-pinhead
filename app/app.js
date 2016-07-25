@@ -12,3 +12,8 @@ app.config(function($routeProvider, FireCreds){
 	};
 	firebase.initializeApp(authConfig);
 
+	$routeProvider.
+		when('/items/login', {
+			templateUrl: 'partials/login.html',
+			controller: 'LogInCtrl'
+		}).
