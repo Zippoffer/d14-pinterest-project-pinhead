@@ -10,8 +10,7 @@ app.controller("LogInCtrl", function($scope, $location, AuthFactory){
     .then(function(result) {
       var user = result.user.uid;
       console.log("logged in ", user);
-      // Load to boards?
-      $location.path("/");
+      $location.path("/pinhead/mainboard");
       $scope.$apply();
     }).catch(function(error) {
       var errorCode = error.code;
