@@ -10,7 +10,8 @@
 </head>
 <body ng-app="PinheadApp">
 	<div class="row">
-		
+		<div ng-view="/">
+		</div>
 
 
 
@@ -23,7 +24,12 @@
 	<!-- application scripts -->
 	<script src="app/app.js"></script>
 	<!-- factories -->
+	<script src="app/values/firebasecreds.js"></script>
+	<script src="app/factories/ItemFactory.js"></script>
+	<script src="app/factories/AuthFactory.js"></script>	
 	<!-- controllers -->
-
+	<script src="/app/controllers/LoginCtrl.js"></script>
+	<script src="/app/controllers/BoardViewCtrl.js"></script>
+	<script src="/app/controllers/NewBoardCtrl.js"></script>
 </body>
 </html>
