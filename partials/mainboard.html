@@ -7,11 +7,11 @@
 
 			<h1>Pinhead Board</h1>
 			<div class="row">
-      
+       <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
 				<div class="panel panel-default DONOTSTYLETHIS">
 					<div class="panel-body cardPanelBody">
 
-						<div ng-repeat="board in boards | filter: userID">
+						<div ng-repeat="board in boards | filter: userID | filter: searchText">
 			  			<div class="col-xs-4 board">
 			  				<div class="row boardTitle">
 			  					<h2>{{board.title}}</h2>
