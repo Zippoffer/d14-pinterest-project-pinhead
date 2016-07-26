@@ -21,10 +21,10 @@ app.config(function($routeProvider, FireCreds) {
     when('/pinhead/mainboard', {
         templateUrl: 'partials/mainboard.html',
         controller: 'BoardViewCtrl'
-    });
-    // when('/pinhead/board/:itemID', {
-    //     templateUrl: 'partials/board.html',
-    //     controller: 'SelectViewCtrl'
-    // }).
-    // otherwise("/pinhead/mainboard");
+    }).
+    when('/pinhead/board/:itemID', {
+        templateUrl: 'partials/pinview.html',
+        controller: 'PinViewCtrl'
+    }).
+    otherwise("/pinhead/mainboard");
 });

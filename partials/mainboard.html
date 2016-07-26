@@ -1,5 +1,6 @@
 <div ng-include="'partials/navbar.html'"></div>
 
+
 <div class="row">
 	<div class="col-xs-10 col-xs-offset-1 main-container">
 		<div class="col-xs-12">
@@ -26,7 +27,7 @@
 			<div class="col-xs-4 board">
 				<div class="row"> 
 				</div>
-<button type="button" class="btn btn-default btn-lg">
+<button type="button" class="btn btn-default btn-lg" ng-controller="NewBoardCtrl" ng-click="AddNewBoard()">
   <span class="glyphicon glyphicon-pushpin biggerIcon" aria-hidden="true"></span>
    <h3>Add Board</h3>
 </button>

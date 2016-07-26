@@ -1,9 +1,12 @@
 "use strict";
 
-app.controller("NewBoardCtrl", function($scope, ItemStorage, $location, AuthFactory) {
-  $scope.newBoard = {
+app.controller("NewPinCtrl", function($scope, ItemStorage, $location, AuthFactory) {
+  $scope.newPin = {
     uid: null,
+    boardID: "",
     title: "",
+    url: "",
+    description: "",
     tags: "",
   };
 
@@ -11,7 +14,7 @@ app.controller("NewBoardCtrl", function($scope, ItemStorage, $location, AuthFact
     $scope.newBoard.uid = AuthFactory.getUser();
     ItemStorage.postNewBoard($scope.newBoard)
       .then(function(response) {
-        $location.url("/pinhead/mainboard");
+        $location.url("/pinhead/board");
       });
   };
 });
