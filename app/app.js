@@ -6,6 +6,7 @@ var app = angular.module("PinheadApp", ['ngRoute'])
 
 
 app.config(function($routeProvider, FireCreds) {
+
     let authConfig = {
         apiKey: FireCreds.apiKey,
         authDomain: FireCreds.authDomain
