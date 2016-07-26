@@ -3,3 +3,4 @@ lib/bower_components
 lib/node_modules
 styles/
 app/values/firebasecreds.js
+values/firebasecreds.js
