@@ -16,12 +16,11 @@ app.config(function($routeProvider, FireCreds) {
     when('/', {
         templateUrl: 'partials/login.html',
         controller: 'LogInCtrl'
+    }).
+    when('/pinhead/mainboard', {
+        templateUrl: 'partials/mainboard.html',
+        controller: 'BoardViewCtrl'
     });
-    // }).
-    // when('/pinhead/mainboard', {
-    //     templateUrl: 'partials/mainboard.html',
-    //     controller: 'BoardViewCtrl'
-    // }).
     // when('/pinhead/board/:itemID', {
     //     templateUrl: 'partials/board.html',
     //     controller: 'SelectViewCtrl'
