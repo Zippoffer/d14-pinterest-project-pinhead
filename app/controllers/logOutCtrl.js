@@ -1,13 +1,3 @@
-// 'use strict';
-// app.controller("logOutCtrl", function($scope, $location, AuthFactory) {
-//     $scope.logOut = function() {
-//         AuthFactory.logOut();
-//         console.log("you are logged out");
-//     }
-// })
-
-
-
 "use strict";
 
 app.controller("logOutCtrl", function($scope, $location, AuthFactory) {
