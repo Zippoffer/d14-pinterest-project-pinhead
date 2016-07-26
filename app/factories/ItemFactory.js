@@ -4,11 +4,11 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
 
   let postNewBoard = function(newItem) {
     return $q(function(resolve, reject) {
-      $http.post(`${FirebaseURL}/boards.json`)
-      // JSON.stringify(newItem))
-      .success(function(ObjFromFirebase) {
-        resolve(ObjFromFirebase);
-      })
+      $http.post(`${FirebaseURL}/boards.json`,
+        JSON.stringify(newItem))
+        .success(function(ObjFromFirebase) {
+          resolve(ObjFromFirebase);
+        })
         .error(function(error) {
           reject(error);
         });
@@ -17,11 +17,11 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
 
   let postNewPin = function(newItem) {
     return $q(function(resolve, reject) {
-      $http.post(`${FirebaseURL}/pins.json`)
-      // JSON.stringify(newItem))
-      .success(function(ObjFromFirebase) {
-        resolve(ObjFromFirebase);
-      })
+      $http.post(`${FirebaseURL}/pins.json`,
+        JSON.stringify(newItem))
+        .success(function(ObjFromFirebase) {
+          resolve(ObjFromFirebase);
+        })
         .error(function(error) {
           reject(error);
         });
@@ -97,6 +97,6 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
 
 
   return {
-    postNewBoard, postNewPin, getBoards, deleteBoard
+    postNewBoard, postNewPin, getBoards, deleteBoard, getPins, deletePin
   };
 });
