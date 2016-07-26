@@ -80,7 +80,7 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
   };
 
   var deletePin = function(pinID) {
-    console.log(pinID, "this is a deleted board");
+    console.log(pinID, "this is a deleted pin");
     return $q((resolve, reject) => {
       $http.delete(
         `${FirebaseURL}/pins/${pinID}.json`

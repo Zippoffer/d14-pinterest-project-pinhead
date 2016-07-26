@@ -13,6 +13,16 @@ app.controller("PinViewCtrl", function($scope, $routeParams, ItemStorage) {
       })[0];
     });
 
-
+  $scope.deletePinCall = function(pin) {
+    ItemStorage.deletePin(pin)
+      .then((pinCollection) => {
+        $scope.pins = pinCollection;
+        $location.path("/partials/board/:boardID");
+        ItemStorage.getPins()
+          .then((pinCollection) => {
+            $scope.pins = pinCollection;
+          });
+      });
+  };
 
 });

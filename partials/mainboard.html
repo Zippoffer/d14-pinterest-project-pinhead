@@ -14,7 +14,8 @@
 						<div ng-repeat="board in boards | filter: userID">
 			  			<div class="col-xs-4 board">
 			  				<div class="row boardTitle">
-			  					<h2>{{board.title}}</h2>
+			  				<a href="#/pinhead/board/{{board.id}}">
+			  					<h2>{{board.title}}</h2></a>
 			  				</div>
 			  				<div class="row boardRow">
 			  					{{board.tags}}
