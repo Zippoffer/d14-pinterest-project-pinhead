@@ -13,7 +13,6 @@ app.controller("BoardViewCtrl", function($scope, $routeParams, $location, ItemSt
       })[0];
     });
 
-
   $scope.deleteBoardCall = function(board) {
     ItemStorage.deleteBoard(board)
       .then((boardCollection) => {
@@ -25,5 +24,6 @@ app.controller("BoardViewCtrl", function($scope, $routeParams, $location, ItemSt
           });
       });
   };
+
 
 });

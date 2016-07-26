@@ -26,8 +26,8 @@ app.config(function($routeProvider, FireCreds) {
     templateUrl: 'partials/newBoard.html',
     controller: 'NewBoardCtrl'
   }).
-  when('/pinhead/board/:itemID', {
-    templateUrl: 'partials/pinview.html',
+  when('/pinhead/board/:boardID', {
+    templateUrl: 'partials/pins.html',
     controller: 'PinViewCtrl'
   }).
   otherwise("/pinhead/mainboard");
