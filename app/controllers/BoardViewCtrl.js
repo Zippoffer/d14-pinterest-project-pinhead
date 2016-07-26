@@ -1,16 +1,16 @@
 "use strict";
 
-app.controller("ItemViewCtrl", function($scope, $routeParams, ItemStorage){
-	$scope.items = [];
+app.controller("BoardViewCtrl", function($scope, $routeParams, ItemStorage) {
+    $scope.boards = [];
 
 
-ItemStorage.getBoards()
-	.then(function(itemCollection){
-		$scope.items = itemCollection;
+    ItemStorage.getBoards()
+        .then(function(boardCollection) {
+            $scope.boards = boardCollection;
 
-		$scope.selectedItem = $scope.items.filter(function(item){
-			return item.id === $routeParams.itemId;
-		})[0];
-	});
+            $scope.selectedBoard = $scope.boards.filter(function(board) {
+                return board.id === $routeParams.boardId;
+            })[0];
+        });
 
 });
