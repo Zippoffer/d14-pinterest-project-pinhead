@@ -7,7 +7,7 @@ app.controller("NewBoardCtrl", function($scope, ItemStorage, $location, AuthFact
     tags: "",
   };
 
-  $scope.addNewItem = function() {
+  $scope.addNewBoard = function() {
     $scope.newBoard.uid = AuthFactory.getUser();
     ItemStorage.postNewBoard($scope.newBoard)
       .then(function(response) {
