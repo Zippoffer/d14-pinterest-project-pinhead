@@ -35,8 +35,8 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
                 .success(function(boardObject) {
                     let boardCollection = boardObject;
                     Object.keys(boardCollection).forEach(function(key) {
-                        itemCollection[key].id = key;
-                        boards.push(itemCollection[key]);
+                        boardCollection[key].id = key;
+                        boards.push(boardCollection[key]);
                     });
                     resolve(boards);
                 })
@@ -44,5 +44,26 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
                     reject(error);
                 });
         });
+    };
+
+    var deleteBoard = function(boardID) {
+        console.log(boardID, "this is a deleted board");
+        return $q((resolve, reject) => {
+            $http.delete(
+                `${FirebaseURL}/boards/${boardID}.json`
+            )
+                .success((data) => {
+                    resolve(data);
+                })
+                .error((error) => {
+                    reject(error);
+                });
+        });
+    };
+
+
+
+    return {
+        postNewBoard, postNewPin, getBoards, deleteBoard
     };
 });
