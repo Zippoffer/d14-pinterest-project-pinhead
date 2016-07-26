@@ -10,8 +10,5 @@ app.controller("NavCtrl", function($scope) {
         name: "new boards",
         url: "#/boards/new"
     }]
-    // , {
-    //     name: "logout",
-    //     url: "#/boards/login"
-    // }];
+
 });
