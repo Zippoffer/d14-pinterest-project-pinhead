@@ -10,11 +10,11 @@ app.controller("NewPinCtrl", function($scope, ItemStorage, $location, AuthFactor
     tags: "",
   };
 
-  $scope.addNewItem = function() {
-    $scope.newBoard.uid = AuthFactory.getUser();
-    ItemStorage.postNewBoard($scope.newBoard)
+  $scope.addNewPin = function(boardID) {
+    $scope.newPin.uid = AuthFactory.getUser();
+    ItemStorage.postNewPin($scope.newPin)
       .then(function(response) {
-        $location.url("/pinhead/board");
+        $location.url("/pinhead/board/`${boardID}`");
       });
   };
 });

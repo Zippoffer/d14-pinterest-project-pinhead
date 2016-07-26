@@ -46,10 +46,10 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
     });
   };
 
-  let getPins = function() {
+  let getPins = function(boardID) {
     let pins = [];
     return $q(function(resolve, reject) {
-      $http.get(`${FirebaseURL}/pins.json`)
+      $http.get(`${FirebaseURL}/pins.json?orderBy="boardID"&equalTo="${boardID}"`)
         .success(function(pinObject) {
           let pinCollection = pinObject;
           Object.keys(pinCollection).forEach(function(key) {
