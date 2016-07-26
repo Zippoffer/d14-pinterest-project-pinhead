@@ -6,19 +6,7 @@ var app = angular.module("PinheadApp", ['ngRoute'])
 
 
 app.config(function($routeProvider, FireCreds) {
-<<<<<<< HEAD
-        let authConfig = {
-            apiKey: FireCreds.apiKey,
-            authDomain: FireCreds.authDomain
-        };
-        firebase.initializeApp(authConfig);
 
-        $routeProvider.
-        when('/items/login', {
-            templateUrl: 'partials/login.html',
-            controller: 'LogInCtrl'
-        }).
-=======
     let authConfig = {
         apiKey: FireCreds.apiKey,
         authDomain: FireCreds.authDomain
@@ -41,4 +29,3 @@ app.config(function($routeProvider, FireCreds) {
     // }).
     // otherwise("/pinhead/mainboard");
 });
->>>>>>> 323b21b4373b39ad1e491755ac865931909e2a8e
