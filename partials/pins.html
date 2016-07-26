@@ -1,0 +1,49 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 main-container">
+    <div class="col-xs-12">
+
+      <h1>Board Pins</h1>
+      <div class="row">
+      
+        <div class="panel panel-default DONOTSTYLETHIS">
+          <div class="panel-body cardPanelBody">
+
+            <div ng-repeat="board in pins | filter: boardID">
+              <div class="col-xs-4 board">
+                <div class="row boardTitle">
+                  <h2>{{pin.title}}</h2>
+                </div>
+                <div class="row boardRow">
+                  {{pin.url}}
+                </div>
+                <div class="row boardRow">
+                  {{pin.description}}
+                </div>
+                <div class="row boardRow">
+                  {{pin.tags}}
+                </div>
+                <div class="row deleteBoardRow">
+                  <button type="btn btn-default" ng-click="deletePinCall(pin.id)" class="deleteButtons">Delete</button>
+                </div>
+              </div>
+            </div> <!-- ng-repeat -->
+
+            <div class="col-xs-4 board">
+              <div class="row spacer"> </div>
+              <a class="addBoardDiv" ng-href="#/pinhead/newboard">
+                <span class="glyphicon glyphicon-pushpin biggerIcon" aria-hidden="true"></span>
+                 <h3>Add Board</h3>
+              </a>
+              <div class="row spacer"> </div>
+            </div>  <!-- class="col-xs-4 board"> -->
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
