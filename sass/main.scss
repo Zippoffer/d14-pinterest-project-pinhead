@@ -1,15 +1,18 @@
 
 .cardPanelBody{
-  background-color: lightblue;
-  border: 2px dashed green;
+  background: linear-gradient(125deg, #CCE6DF 50%, #C7E0DA 50%);
+  border: 2px solid rgba(25,49,56,0.9);
+  box-shadow: 0 10px 30px -7px rgba(25,49,56,0.5);
 }
+
 .board{
-  background-color: yellow;
-  border: 2px dashed red;
+  background-color: pink;
+  border: 2px solid slategrey;
+  height: 350px;
 }
 
 .boardTitle{
-  background-color: purple;
+  background-color: green;
   border: 2px dashed black;
   text-align: center;
 }
@@ -29,5 +32,8 @@
 .biggerIcon{
   font-size: 2.5em;
   text-align: center;
-  
+}
+.addBoardDiv{
+  text-align: center;
+  padding: 10px;
 }
