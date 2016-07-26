@@ -11,10 +11,11 @@
         <div class="panel panel-default DONOTSTYLETHIS">
           <div class="panel-body cardPanelBody">
 
-            <div ng-repeat="board in pins | filter: boardID">
+            <div ng-repeat="pin in pins | filter: boardID">
               <div class="col-xs-4 board">
                 <div class="row boardTitle">
-                  <h2>{{pin.title}}</h2>
+                  <a href="#/pinhead/board/{{pin.boardID}}/{{pin.id}}">
+                  <h2>{{pin.title}}</h2></a>
                 </div>
                 <div class="row boardRow">
                   {{pin.url}}
@@ -35,7 +36,7 @@
               <div class="row spacer"> </div>
               <a class="addBoardDiv" ng-href="#/pinhead/newboard">
                 <span class="glyphicon glyphicon-pushpin biggerIcon" aria-hidden="true"></span>
-                 <h3>Add Board</h3>
+                 <h3>Add Pins</h3>
               </a>
               <div class="row spacer"> </div>
             </div>  <!-- class="col-xs-4 board"> -->
