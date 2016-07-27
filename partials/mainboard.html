@@ -13,10 +13,11 @@
 
 						<div ng-repeat="board in boards | filter: userID | filter: searchText">
 			  			<div class="col-xs-4 board">
-			  				<div class="row boardTitle">
 			  				<a href="#/pinhead/board/{{board.id}}">
-			  					<h2>{{board.title}}</h2></a>
+			  				<div class="row boardTitle">
+			  					<h2>{{board.title}}</h2>
 			  				</div>
+		  					</a>
 			  				<div class="row boardRow">
 			  					{{board.tags}}
 			  				</div>

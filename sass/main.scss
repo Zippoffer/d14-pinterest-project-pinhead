@@ -1,3 +1,7 @@
+.pinheadTitle{
+  padding-left: 30px;
+  margin-top: 1.5%;
+}
 
 .cardPanelBody{
   background: linear-gradient(125deg, #CCE6DF 50%, #C7E0DA 50%);
@@ -13,7 +17,9 @@
 }
 
 .boardTitle{
-  background-color: red;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(25,49,56,0.8);
   text-align: center;
   padding: 20px;
   box-shadow: 0 4px 30px -15px rgba(25,49,56,0.5);
@@ -34,8 +40,6 @@
   box-shadow: 0 4px 30px -15px rgba(25,49,56,0.5);
 }
 
-
-}
 
 .deleteButtons{
   color: white;
