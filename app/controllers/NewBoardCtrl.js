@@ -4,14 +4,17 @@ app.controller("NewBoardCtrl", function($scope, ItemStorage, $location, AuthFact
   $scope.newBoard = {
     uid: null,
     title: "",
+    date: null,
     tags: "",
   };
 
   $scope.addNewBoard = function() {
     $scope.newBoard.uid = AuthFactory.getUser();
+    $scope.newBoard.date = Date();
     ItemStorage.postNewBoard($scope.newBoard)
       .then(function(response) {
-        $location.url("/pinhead/mainboard");
+        $location.path("/partials/mainboard");
+        ItemStorage.getBoards();
       });
   };
 });

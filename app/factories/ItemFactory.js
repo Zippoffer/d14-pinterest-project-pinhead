@@ -32,7 +32,7 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
     console.log("userID", currentUserID);
     let boards = [];
     return $q(function(resolve, reject) {
-      $http.get(`${FirebaseURL}/boards.json?orderBy="uid"&equalTo="${currentUserID}"`)
+      $http.get(`${FirebaseURL}/boards.json?orderBy="date"&equalTo="${currentUserID}"`)
         .success(function(boardObject) {
           let boardCollection = boardObject;
           Object.keys(boardCollection).forEach(function(key) {
@@ -50,7 +50,7 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
   let getPins = function(boardID) {
     let pins = [];
     return $q(function(resolve, reject) {
-      $http.get(`${FirebaseURL}/pins.json?orderBy="boardID"&equalTo="${boardID}"`)
+      $http.get(`${FirebaseURL}/pins.json?orderBy="date"&equalTo="${boardID}"`)
         .success(function(pinObject) {
           let pinCollection = pinObject;
           Object.keys(pinCollection).forEach(function(key) {
