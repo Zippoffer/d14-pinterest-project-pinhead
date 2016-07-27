@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("PinViewCtrl", function($scope, $routeParams, ItemStorage) {
+app.controller("PinViewCtrl", function($scope, $routeParams, ItemStorage, $location) {
   $scope.pins = [];
 
   $scope.boardID = $routeParams.boardID;
@@ -18,8 +18,10 @@ app.controller("PinViewCtrl", function($scope, $routeParams, ItemStorage) {
     ItemStorage.deletePin(pin)
       .then((pinCollection) => {
         $scope.pins = pinCollection;
-        $location.path("/partials/board/:boardID");
-        ItemStorage.getPins()
+        $scope.boardID = $routeParams.boardID
+        console.log("boardID", $scope.boardID, $routeParams.boardID);
+        $location.path(`/pinhead/board/${$routeParams.boardID}`);
+        ItemStorage.getPins($scope.boardID)
           .then((pinCollection) => {
             $scope.pins = pinCollection;
           });
