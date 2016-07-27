@@ -77,15 +77,20 @@
 .logout {
 	border: none;
 	background: none;
-	position: relative;
-	margin-top: 1.25%;
-  left: 85%;
-	text-align: center-block;
+	// position: relative;
+	margin-top: 1.15%;
+  float: right;
+  // left: 85%;
+	// text-align: center;
 }
 .boards {
-  position: relative;
-  right: 100%;
+  float: right;
+  // position: relative;
+  // right: 100%;
 }
+// .navbar {
+//   padding: 2% 0 auto 0;
+// }
 
 img {
   max-width: 100%;
