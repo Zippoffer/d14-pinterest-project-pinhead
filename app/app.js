@@ -13,6 +13,7 @@ app.config(function($routeProvider, FireCreds) {
     };
     firebase.initializeApp(authConfig);
 
+
     $routeProvider.
     when('/', {
         templateUrl: 'partials/login.html',
@@ -26,9 +27,14 @@ app.config(function($routeProvider, FireCreds) {
         templateUrl: 'partials/newBoard.html',
         controller: 'NewBoardCtrl'
     }).
-    when('/pinhead/board/:itemID', {
-        templateUrl: 'partials/pinview.html',
+    when('/pinhead/board/:boardID', {
+        templateUrl: 'partials/pins.html',
         controller: 'PinViewCtrl'
     }).
+    when('/pinhead/:boardID/:pinID', {
+        templateUrl: 'partials/newPins.html',
+        controller: 'NewPinCtrl'
+    }).
     otherwise("/pinhead/mainboard");
+
 });

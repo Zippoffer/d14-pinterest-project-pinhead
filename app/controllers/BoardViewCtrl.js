@@ -1,17 +1,21 @@
 "use strict";
 
-app.controller("BoardViewCtrl", function($scope, $routeParams, $location, ItemStorage) {
+app.controller("BoardViewCtrl", function($scope, $routeParams, $location, ItemStorage, AuthFactory) {
+
+  $scope.userID = AuthFactory.getUser();
+
   $scope.boards = [];
 
+  if (AuthFactory.isAuthenticated()) {
+    ItemStorage.getBoards($scope.userID)
+      .then(function(boardCollection) {
+        $scope.boards = boardCollection;
 
-  ItemStorage.getBoards()
-    .then(function(boardCollection) {
-      $scope.boards = boardCollection;
-
-      $scope.selectedBoard = $scope.boards.filter(function(board) {
-        return board.id === $routeParams.boardId;
-      })[0];
-    });
+        $scope.selectedBoard = $scope.boards.filter(function(board) {
+          return board.id === $routeParams.boardId;
+        })[0];
+      });
+  } else {}
 
   $scope.deleteBoardCall = function(board) {
     ItemStorage.deleteBoard(board)
