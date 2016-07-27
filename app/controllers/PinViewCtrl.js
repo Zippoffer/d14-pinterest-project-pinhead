@@ -3,6 +3,7 @@
 app.controller("PinViewCtrl", function($scope, $routeParams, ItemStorage) {
   $scope.pins = [];
 
+  $scope.boardID = $routeParams.boardID;
 
   ItemStorage.getPins($routeParams.boardID)
     .then(function(pinCollection) {
