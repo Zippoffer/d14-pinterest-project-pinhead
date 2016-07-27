@@ -1,9 +1,11 @@
 "use strict";
 
 app.controller("NewPinCtrl", function($scope, ItemStorage, $location, $routeParams, AuthFactory) {
+
     $scope.newPin = {
         uid: null,
         boardID: null,
+        date: null,
         title: "",
         url: "",
         description: "",
@@ -12,10 +14,13 @@ app.controller("NewPinCtrl", function($scope, ItemStorage, $location, $routePara
 
     $scope.addNewPin = function() {
         $scope.newPin.uid = AuthFactory.getUser();
-        $scope.newPin.boardID = $routeParams.boardID
+        $scope.newPin.boardID = $routeParams.boardID;
+        $scope.newPin.date = Date();
         ItemStorage.postNewPin($scope.newPin)
             .then(function(response) {
-                $location.url("/pinhead/board/`${boardID}`");
+                $location.path(`/pinhead/board/${$scope.newPin.boardID}`);
+                ItemStorage.getPins($routeParams.boardID);
             });
     };
+
 });
