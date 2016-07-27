@@ -17,8 +17,8 @@ app.controller("NewPinCtrl", function($scope, ItemStorage, $location, $routePara
     $scope.newPin.date = Date();
     ItemStorage.postNewPin($scope.newPin)
       .then(function(response) {
-        $location.path("/pinhead/board/:boardID");;
-        ItemStorage.getPins();
+        $location.path(`/pinhead/board/${$scope.newPin.boardID}`);
+        ItemStorage.getPins($routeParams.boardID);
       });
   };
 });
