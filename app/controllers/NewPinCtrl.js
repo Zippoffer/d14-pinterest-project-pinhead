@@ -10,7 +10,7 @@ app.controller("NewPinCtrl", function($scope, ItemStorage, $location, $routePara
         tags: "",
     };
 
-    $scope.addNewPin = function(boardID) {
+    $scope.addNewPin = function() {
         $scope.newPin.uid = AuthFactory.getUser();
         $scope.newPin.boardID = $routeParams.boardID
         ItemStorage.postNewPin($scope.newPin)
@@ -18,5 +18,4 @@ app.controller("NewPinCtrl", function($scope, ItemStorage, $location, $routePara
                 $location.url("/pinhead/board/`${boardID}`");
             });
     };
-
 });

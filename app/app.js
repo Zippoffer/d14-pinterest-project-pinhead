@@ -7,12 +7,12 @@ var app = angular.module("PinheadApp", ['ngRoute'])
 
 app.config(function($routeProvider, FireCreds) {
 
+
     let authConfig = {
         apiKey: FireCreds.apiKey,
         authDomain: FireCreds.authDomain
     };
     firebase.initializeApp(authConfig);
-
 
     $routeProvider.
     when('/', {
@@ -31,7 +31,7 @@ app.config(function($routeProvider, FireCreds) {
         templateUrl: 'partials/pins.html',
         controller: 'PinViewCtrl'
     }).
-    when('/pinhead/:boardID/:pinID', {
+    when('/pinhead/newPinform/:boardID', {
         templateUrl: 'partials/newPins.html',
         controller: 'NewPinCtrl'
     }).
