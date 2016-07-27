@@ -15,10 +15,10 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
     });
   };
 
-  let postNewPin = function(newItem) {
+  let postNewPin = function(newPin) {
     return $q(function(resolve, reject) {
       $http.post(`${FirebaseURL}/pins.json`,
-        JSON.stringify(newItem))
+        JSON.stringify(newPin))
         .success(function(ObjFromFirebase) {
           resolve(ObjFromFirebase);
         })
@@ -28,10 +28,11 @@ app.factory("ItemStorage", function(FirebaseURL, $q, $http, AuthFactory) {
     });
   };
 
-  let getBoards = function() {
+  let getBoards = function(currentUserID) {
+    console.log("userID", currentUserID);
     let boards = [];
     return $q(function(resolve, reject) {
-      $http.get(`${FirebaseURL}/boards.json`)
+      $http.get(`${FirebaseURL}/boards.json?orderBy="uid"&equalTo="${currentUserID}"`)
         .success(function(boardObject) {
           let boardCollection = boardObject;
           Object.keys(boardCollection).forEach(function(key) {
