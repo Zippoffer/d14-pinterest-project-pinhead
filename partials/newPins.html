@@ -1,0 +1,22 @@
+<div class="col-xs-6 col-xs-offset-3">
+	<h1>New ToDo</h1>
+	<form>
+		<div class="form-group">
+			<label>Title</label>
+			<input type="text" class="form-control" value="" placeholder="" ng-model="newPin.title"/>
+		</div>
+		<div class="form-group">
+			<label>Image</label>
+			<input type="text" class="form-control" value="" placeholder="Add link to images here" ng-model="newPin.url"/>
+		</div>
+		<div class="form-group">
+			<label>Description</label>
+			<input type="text" class="form-control" value="" placeholder="" ng-model="newPin.description"/>
+		</div>
+		<div class="form-group">
+			<label>Tags</label>
+			<input type="text" class="form-control" value="" placeholder="" ng-model="newPin.tags"/>
+		</div>
+		<button class="btn btn-default" ng-click="addNewPin()">Submit</button>
+	</form>
+</div>
