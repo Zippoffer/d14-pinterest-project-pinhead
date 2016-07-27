@@ -11,14 +11,14 @@
         <div class="panel panel-default DONOTSTYLETHIS">
           <div class="panel-body cardPanelBody">
 
-            <div ng-repeat="pin in pins | filter: boardID">
+            <div ng-repeat="pin in pins | filter: boardID | filter: searchText">
               <div class="col-xs-4 board">
                 <div class="row boardTitle">
                   <a href="#/pinhead/board/{{pin.boardID}}/{{pin.id}}">
                   <h2>{{pin.title}}</h2></a>
                 </div>
                 <div class="row boardRow">
-                  {{pin.url}}
+                  <img ng-src= {{pin.url}}>
                 </div>
                 <div class="row boardRow">
                   {{pin.description}}
