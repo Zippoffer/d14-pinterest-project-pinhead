@@ -5,7 +5,7 @@
   <div class="col-xs-10 col-xs-offset-1 main-container">
     <div class="col-xs-12">
 
-      <h1>Board Pins</h1>
+      <h1>Pinhead / Your Pins</h1>
       <div class="row">
       <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
         <div class="panel panel-default DONOTSTYLETHIS">
@@ -13,6 +13,7 @@
 
             <div ng-repeat="pin in pins | filter: boardID | filter: searchText">
               <div class="col-xs-4 board">
+
                 <div class="row boardTitle">
                   <a href="#/pinhead/board/{{pin.boardID}}/{{pin.id}}">
                   <h2>{{pin.title}}</h2></a>
@@ -28,10 +29,11 @@
                 </div>
                 <div class="row deleteBoardRow">
                   <button type="btn btn-default" ng-click="deletePinCall(pin.id)" class="deleteButtons">Delete</button>
-                </div>
-              </div>
-            </div> <!-- ng-repeat -->
-            </div>
+                </div>  <!-- class="row deleteBoardRow"> -->
+              </div>   <!-- class="col-xs-4 board"> -->
+            </div>  <!-- ng-repeat -->
+
+
             <div class="col-xs-4 board">
               <div class="row spacer"> </div>
               <a class="addBoardDiv" ng-href="#/pinhead/newPinform/{{boardID}}">
@@ -41,8 +43,9 @@
               <div class="row spacer"> </div>
             </div>  <!-- class="col-xs-4 board"> -->
 
-          </div>
-        </div>
+
+          </div><!-- class="panel-body cardPanelBody"> -->
+        </div>   <!-- class="panel panel-default DONOTSTYLETHIS"> -->
       </div>
 
     </div>

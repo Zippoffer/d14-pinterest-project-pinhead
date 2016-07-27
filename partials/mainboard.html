@@ -5,9 +5,9 @@
 	<div class="col-xs-10 col-xs-offset-1 main-container">
 		<div class="col-xs-12">
 
-			<h1>Pinhead Board</h1>
+			<h1>Pinhead / Your Boards</h1>
 			<div class="row">
-       <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="searchText">
 				<div class="panel panel-default DONOTSTYLETHIS">
 					<div class="panel-body cardPanelBody">
 
@@ -25,9 +25,10 @@
 			  				</div>
 			  				<div class="row deleteBoardRow">
 			  					<button type="btn btn-default" ng-click="deleteBoardCall(board.id)" class="deleteButtons">Delete</button>
-			  				</div>
-			  			</div>
-		  			</div> <!-- ng-repeat -->
+			  				</div>  <!-- class="row deleteBoardRow"> -->
+			  			</div>   <!-- class="col-xs-4 board"> -->
+		  			</div>	<!-- ng-repeat -->
+
 
 						<div class="col-xs-4 board">
 							<div class="row spacer"> </div>
@@ -38,8 +39,9 @@
 							<div class="row spacer"> </div>
 						</div>	<!-- class="col-xs-4 board"> -->
 
-	  			</div>
-			  </div>
+
+	  			</div>	<!-- class="panel-body cardPanelBody"> -->
+			  </div>	 <!-- class="panel panel-default DONOTSTYLETHIS"> -->
 			</div>
 
 		</div>
